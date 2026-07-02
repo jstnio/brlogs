@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-02T01:00:00Z",
+  "title": "Design System: BRLOGS",
+  "extensions": {
+    "colorMeta": {
+      "cargo-gold": {
+        "role": "primary",
+        "displayName": "Cargo Gold",
+        "canonical": "oklch(73% 0.18 70)",
+        "tonalRamp": ["#3d1500", "#5e2500", "#7d3c00", "#9e5700", "#c07200", "#E8A020", "#f5c868", "#faebd0"]
+      },
+      "navy-deep": {
+        "role": "neutral",
+        "displayName": "Ocean Midnight",
+        "canonical": "oklch(15% 0.05 250)",
+        "tonalRamp": ["#020810", "#081629", "#0d2145", "#132d5e", "#1e4080", "#3460a6", "#6688c4", "#aab8d8"]
+      },
+      "navy-surface": {
+        "role": "neutral",
+        "displayName": "Deep Berth",
+        "canonical": "oklch(22% 0.06 250)",
+        "tonalRamp": ["#040c18", "#081629", "#0d2145", "#152a56", "#1e3e7a", "#2e5599", "#5c7ec0", "#9db0d8"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink White",
+        "canonical": "oklch(95% 0.015 245)",
+        "tonalRamp": ["#1a2035", "#2c3a5c", "#3f547e", "#567aa6", "#7a9dc6", "#a8c0de", "#ccdaee", "#F0F4FF"]
+      },
+      "muted-slate": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "oklch(55% 0.07 245)",
+        "tonalRamp": ["#0d1e35", "#1a2f4f", "#26406a", "#355688", "#4a6fa0", "#6B8BAD", "#96b2cc", "#c5d8ea"]
+      },
+      "button-hover": {
+        "role": "primary",
+        "displayName": "Cargo Gold — Hover",
+        "canonical": "oklch(77% 0.17 70)",
+        "tonalRamp": ["#3d1500", "#5e2500", "#7d3c00", "#9e5700", "#c07200", "#E8A020", "#f5b540", "#faebd0"]
+      },
+      "input-fill": {
+        "role": "neutral",
+        "displayName": "Input Fill",
+        "canonical": "rgba(255,255,255,0.06)",
+        "tonalRamp": []
+      },
+      "input-border": {
+        "role": "neutral",
+        "displayName": "Input Border",
+        "canonical": "rgba(255,255,255,0.12)",
+        "tonalRamp": []
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display — Bebas Neue",
+        "purpose": "Hero headlines only. Condensed, uppercase-only, stamped authority."
+      },
+      "body": {
+        "displayName": "Body — Barlow",
+        "purpose": "Subheadlines, descriptive text, navigation. Geometric, cool, precise."
+      },
+      "label": {
+        "displayName": "Label — Barlow 600",
+        "purpose": "Footer metadata, pill labels, bottom-bar. Uppercase, tight tracking."
+      }
+    },
+    "shadows": [
+      {
+        "name": "beacon-glow",
+        "value": "0 4px 24px rgba(232,160,32,0.15)",
+        "purpose": "CTA button on hover only. Reinforces Cargo Gold as a navigation beacon."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-quart",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "All entrance animations (fadeDown, fadeUp, expand). Fast deceleration."
+      },
+      {
+        "name": "route-dash",
+        "value": "stroke-dashoffset linear 6s infinite",
+        "purpose": "SVG route path animation. Simulates cargo in transit."
+      },
+      {
+        "name": "port-pulse",
+        "value": "ease-in-out 3s infinite",
+        "purpose": "Port marker dots — breathing rhythm of active ports."
+      }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "480px" },
+      { "name": "tablet", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA action. Sharp, gold-stamped. The only warm surface on the page.",
+      "html": "<button class=\"ds-btn-primary\">NOTIFY ME</button>",
+      "css": ".ds-btn-primary { background: #E8A020; color: #081629; font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; letter-spacing: 0.12em; padding: 0.8rem 1.8rem; border: none; border-radius: 2px; cursor: pointer; transition: background 0.2s, transform 0.15s; white-space: nowrap; } .ds-btn-primary:hover { background: #f5b540; transform: translateY(-2px); box-shadow: 0 4px 24px rgba(232,160,32,0.15); } .ds-btn-primary:active { transform: translateY(0); } .ds-btn-primary:focus-visible { outline: 2px solid #E8A020; outline-offset: 3px; }"
+    },
+    {
+      "name": "Email Input",
+      "kind": "input",
+      "refersTo": "notify-input",
+      "description": "Notify-me form input. Subtle dark fill, Cargo Gold focus state.",
+      "html": "<input class=\"ds-input\" type=\"email\" placeholder=\"Enter your email for updates\" />",
+      "css": ".ds-input { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #F0F4FF; font-family: 'Barlow', sans-serif; font-size: 0.9rem; letter-spacing: 0.04em; padding: 0.8rem 1.2rem; border-radius: 2px; width: 260px; outline: none; transition: border-color 0.25s, background 0.25s; } .ds-input::placeholder { color: #6B8BAD; } .ds-input:focus { border-color: #E8A020; background: rgba(232,160,32,0.06); }"
+    },
+    {
+      "name": "Service Pill",
+      "kind": "chip",
+      "refersTo": "service-pill",
+      "description": "Taxonomy tag for service types. Informational only — no hover state.",
+      "html": "<span class=\"ds-pill\">Air Freight</span>",
+      "css": ".ds-pill { font-family: 'Barlow', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #6B8BAD; padding: 0.45rem 1rem; border: 1px solid rgba(107,139,173,0.25); border-radius: 100px; display: inline-block; }"
+    },
+    {
+      "name": "Route Animation",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature SVG component. Animated shipping routes + pulsing port markers.",
+      "html": "<svg class=\"ds-routes\" viewBox=\"0 0 1440 900\" xmlns=\"http://www.w3.org/2000/svg\"><path class=\"ds-route-path\" d=\"M-40,600 Q360,100 720,300 Q1080,500 1480,200\"/><circle class=\"ds-dot\" cx=\"180\" cy=\"590\" r=\"3\"/><circle class=\"ds-dot\" cx=\"720\" cy=\"310\" r=\"3\"/></svg>",
+      "css": ".ds-routes { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.18; } .ds-route-path { fill: none; stroke: #E8A020; stroke-width: 1; stroke-dasharray: 6 10; animation: ds-dash 6s linear infinite; } @keyframes ds-dash { to { stroke-dashoffset: -80; } } .ds-dot { fill: #E8A020; animation: ds-pulse 3s ease-in-out infinite; } @keyframes ds-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } } @media (prefers-reduced-motion: reduce) { .ds-route-path, .ds-dot { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Global Bridge",
+    "overview": "BRLOGS connects worlds. The design embodies that ambition physically: deep ocean-midnight backgrounds that evoke the open sea between origin and destination, a Cargo Gold accent that reads like a navigation beacon cutting through night water, and Bebas Neue headlines that feel stamped on a shipping manifest — compressed, unapologetic, built for scale. Every element communicates movement. The animated route lines crossing the hero are not decoration; they are the product.\n\nThis is not a startup. It is not a platform. It is a freight forwarder with corridor knowledge encoded in its confidence. SMB importers and exporters — operators who move cargo across borders every week — need to see authority instantly. This system earns that read in under two seconds.\n\nThe system rejects three things by name: generic logistics clipart, startup-pastel SaaS aesthetics, and heavy corporate portal design.",
+    "keyCharacteristics": [
+      "Dark-committed: navy-deep covers 80%+ of the surface; no light-mode hedging",
+      "Typographically bold: Bebas Neue display paired with Barlow body for industrial precision",
+      "Accent economy: Cargo Gold appears only on CTAs, the divider, and interactive highlights",
+      "Motion as metaphor: animated route lines and pulsing port dots reflect cargo in transit",
+      "Sharp geometry: 2px radius on interactive elements; no rounded softness"
+    ],
+    "rules": [
+      { "name": "The Beacon Rule", "body": "Cargo Gold appears on ≤10% of any surface. Its rarity is what makes it a signal.", "section": "colors" },
+      { "name": "The No-Warm-Background Rule", "body": "Cargo Gold is never used as a background fill on any block larger than a button.", "section": "colors" },
+      { "name": "The Two-Family Rule", "body": "Bebas Neue for display only; Barlow for everything else. Never a third typeface.", "section": "typography" },
+      { "name": "The Uppercase Discipline Rule", "body": "Body copy and prose are NOT uppercase. Only labels and Bebas Neue display are uppercase.", "section": "typography" },
+      { "name": "The Flat-by-Default Rule", "body": "Surfaces are flat at rest. The button hover glow is the only permitted shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Cargo Gold rare — headline em highlight, divider, CTA button, link hovers only",
+      "Do use Bebas Neue only for hero display text (≥2rem)",
+      "Do keep the dark background as the dominant surface",
+      "Do pair motion with meaning — route lines move because cargo moves",
+      "Do apply text-wrap: balance to all Bebas Neue headlines",
+      "Do include @media (prefers-reduced-motion: reduce) that stops animations while keeping elements visible"
+    ],
+    "donts": [
+      "Don't use generic logistics imagery: stock-photo trucks, container ship clip-art",
+      "Don't use startup-pastel SaaS aesthetics: no purple gradients, no rounded pill cards, no feature grids",
+      "Don't use heavy corporate portal design: no dense forms, no government-portal typography",
+      "Don't apply border-left greater than 1px as a colored stripe on cards or callouts",
+      "Don't use background-clip: text gradient fills on any text",
+      "Don't add a third typeface",
+      "Don't use Bebas Neue below 2rem",
+      "Don't add rounded corners beyond 2px on buttons or inputs",
+      "Don't use uppercase tracking on prose body copy",
+      "Don't add box-shadow at element rest state"
+    ]
+  }
+}
